@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.web.client.RestTemplate;
 
 import com.accounts.example.model.Account;
@@ -11,6 +12,7 @@ import com.accounts.example.model.Account;
 public class RemoteAccountRepository implements AccountRepository {
 
 	@Autowired
+	//@LoadBalanced
 	protected RestTemplate restTemplate;
 
 	protected String serviceUrl;
